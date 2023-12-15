@@ -2,37 +2,31 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
+
+	"math"
 )
 
-func eat(num uint8) {
-	time.Sleep(1 * time.Second)
-	fmt.Println("I have eaten", num, "times")
+// Variadic functions ~ functions with an undefined number of parameters
+func sum(nums ...int) {
+	var total int = 0
+	for _, num := range nums {
+		total += num
+	}
+	fmt.Println("le total est de ", total)
 }
 
-func produce(num uint8) {
-	time.Sleep(2 * time.Second)
-	fmt.Println("I have produced", num, "times")
+// methods
+type Circle struct {
+	x_center, y_center float64
+	ray                float64
+}
+
+func (c *Circle) Area() float64 {
+	return math.Pi * math.Pow(c.ray, 2)
 }
 
 func main() {
-	var resources = 10
-
-	for resources > 0 {
-		//Production
-		var prod_quantity = rand.Intn(10)
-		go produce(uint8(prod_quantity))
-		resources += prod_quantity
-
-		//Consumption
-		var con_quantity = rand.Intn(resources)
-		go eat(uint8(con_quantity))
-		resources -= con_quantity
-
-		fmt.Println("######################################")
-		fmt.Println("There is ", resources, "left      #")
-		fmt.Println("######################################")
-		time.Sleep(2 * time.Second)
-	}
+	sum(1, 3, 5, 7, 9)
+	c1 := Circle{x_center: 0.0, y_center: 0.0, ray: 4.0}
+	fmt.Println(c1, "has an Area of", c1.Area())
 }

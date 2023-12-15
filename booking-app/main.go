@@ -4,7 +4,7 @@ import (
 	"fmt"
 	// "os/exec"
 	// "strings"
-	"time"
+	// "time"
 )
 
 type userData struct {
@@ -24,10 +24,10 @@ func main() {
 
 	var users = make([]userData, 0)
 	users = append(users, userData{
-		firstName: "Gabby",
-		lastName: "WATCHO",
-		email: "",
-		numberOfTickets: 10,
+		firstName:          "Gabby",
+		lastName:           "WATCHO",
+		email:              "",
+		numberOfTickets:    10,
 		hasAllowedFeedback: false,
 	})
 
