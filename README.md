@@ -1,2 +1,2 @@
 # go-learn
-All mini projects I did to onboard on g
+All mini projects I did to onboard on go

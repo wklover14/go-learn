@@ -5,4 +5,5 @@ use (
 	./concurrency
 	./foo-app
 	./rssagg
+	./dictionary_dataset
 )
